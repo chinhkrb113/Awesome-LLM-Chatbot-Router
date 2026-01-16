@@ -1,4 +1,4 @@
-# Hybrid Intent Router
+# Awesome-LLM-Chatbot-Router
 
 <div align="center">
 
@@ -19,7 +19,7 @@
 ---
 
 ### 🚀 What is this?
-**Hybrid Intent Router** is an enterprise-grade chatbot backend that intelligently routes user queries using a dual-engine approach: **Keyword Rules** for absolute precision and **Vector Embeddings** for semantic understanding.
+**Awesome-LLM-Chatbot-Router** is an enterprise-grade chatbot backend that intelligently routes user queries using a dual-engine approach: **Keyword Rules** for absolute precision and **Vector Embeddings** for semantic understanding.
 
 ### 💡 Why use it?
 Pure LLMs can hallucinate; pure rules are too rigid. This project gives you **the best of both worlds**:
