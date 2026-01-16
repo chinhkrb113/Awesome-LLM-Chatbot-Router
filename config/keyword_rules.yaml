@@ -1,0 +1,156 @@
+keyword_rules:
+
+  leave.create:
+    strong_keywords:
+      - "xin nghỉ"
+      - "nghỉ phép"
+      - "tạo đơn nghỉ"
+      - "đăng ký nghỉ"
+      - "xin phép nghỉ"
+    weak_keywords:
+      - "nghỉ"
+      - "phép"
+      - "nghỉ ốm"
+      - "không lương"
+      - "nghỉ làm"
+    negative_keywords:
+      - "trạng thái"
+      - "đã duyệt"
+      - "chưa duyệt"
+      - "còn bao nhiêu"
+      - "huỷ"
+      - "hủy"
+    special_patterns:
+      - "xin nghỉ * ngày"
+      - "cho tôi nghỉ *"
+      - "tôi muốn nghỉ *"
+      - "đăng ký nghỉ *"
+
+  leave.status:
+    strong_keywords:
+      - "trạng thái"
+      - "đã duyệt"
+      - "chưa duyệt"
+      - "pending"
+      - "xem đơn nghỉ"
+    weak_keywords:
+      - "đơn nghỉ"
+      - "xin nghỉ"
+      - "nghỉ phép"
+      - "kiểm tra"
+    negative_keywords:
+      - "tạo"
+      - "đăng ký"
+      - "xin mới"
+      - "huỷ"
+      - "hủy"
+    special_patterns:
+      - "đơn nghỉ * sao rồi"
+      - "xin nghỉ * chưa"
+      - "đã duyệt chưa"
+      - "xem trạng thái *"
+
+  leave.balance:
+    strong_keywords:
+      - "còn bao nhiêu"
+      - "phép còn"
+      - "số ngày phép"
+      - "balance"
+    weak_keywords:
+      - "nghỉ phép"
+      - "phép năm"
+      - "kiểm tra phép"
+    negative_keywords:
+      - "xin nghỉ"
+      - "tạo đơn"
+      - "huỷ"
+      - "trạng thái"
+    special_patterns:
+      - "còn * ngày phép"
+      - "tôi còn * ngày phép"
+      - "phép năm còn *"
+
+  leave.cancel:
+    strong_keywords:
+      - "huỷ đơn nghỉ"
+      - "hủy đơn nghỉ"
+      - "thu hồi đơn"
+      - "cancel leave"
+    weak_keywords:
+      - "huỷ nghỉ"
+      - "không nghỉ nữa"
+      - "bỏ nghỉ"
+    negative_keywords:
+      - "trạng thái"
+      - "còn bao nhiêu"
+      - "xin nghỉ mới"
+    special_patterns:
+      - "huỷ đơn nghỉ *"
+      - "tôi không nghỉ nữa"
+      - "bỏ đơn nghỉ *"
+
+  visitor.create:
+    strong_keywords:
+      - "tạo khách mời"
+      - "cho vào cổng"
+      - "cấp qr"
+      - "tạo pass"
+      - "đăng ký khách"
+    weak_keywords:
+      - "khách"
+      - "visitor"
+      - "ra vào"
+      - "cổng"
+      - "tiếp khách"
+    negative_keywords:
+      - "trạng thái"
+      - "đã vào chưa"
+      - "huỷ"
+      - "hủy"
+      - "thu hồi"
+    special_patterns:
+      - "cho * vào cổng"
+      - "tạo khách *"
+      - "cấp qr *"
+      - "đăng ký khách *"
+
+  visitor.status:
+    strong_keywords:
+      - "trạng thái khách"
+      - "đã vào chưa"
+      - "check-in"
+      - "xem visitor"
+    weak_keywords:
+      - "khách mời"
+      - "qr"
+      - "ra vào"
+      - "kiểm tra"
+    negative_keywords:
+      - "tạo"
+      - "đăng ký"
+      - "cấp"
+      - "huỷ"
+      - "hủy"
+    special_patterns:
+      - "khách * đã vào chưa"
+      - "qr * còn hiệu lực"
+      - "xem trạng thái khách *"
+
+  visitor.cancel:
+    strong_keywords:
+      - "huỷ khách mời"
+      - "hủy khách"
+      - "thu hồi qr"
+      - "cancel visitor"
+    weak_keywords:
+      - "không cho vào"
+      - "dừng ra vào"
+      - "bỏ khách"
+    negative_keywords:
+      - "tạo"
+      - "đăng ký"
+      - "trạng thái"
+    special_patterns:
+      - "huỷ khách *"
+      - "thu hồi qr *"
+      - "không cho * vào nữa"

@@ -1,0 +1,71 @@
+meta:
+  description: "Devset nhỏ mẫu để kiểm tra route top-k cho các intent leave/visitor."
+  version: "0.1"
+  created_at: "2026-01-14"
+samples:
+  - text: "Mai cho anh A vào cổng"
+    expected_action: "visitor.create"
+    accept_topk: 1
+    domain: "visitor"
+    intent_type: "create"
+    notes: "Visitor create, có dấu."
+  - text: "check in khach moi chua"
+    expected_action: "visitor.status"
+    accept_topk: 3
+    domain: "visitor"
+    intent_type: "status"
+    notes: "Không dấu, status."
+  - text: "thu hoi QR khach chieu nay"
+    expected_action: "visitor.cancel"
+    accept_topk: 3
+    domain: "visitor"
+    intent_type: "cancel"
+    notes: "Không dấu, cancel."
+  - text: "xin nghỉ phép 2 ngày tuần sau"
+    expected_action: "leave.create"
+    accept_topk: 1
+    domain: "leave"
+    intent_type: "create"
+    notes: "Tạo đơn nghỉ phép."
+  - text: "cho tôi nghỉ không lương ngày mai"
+    expected_action: "leave.create"
+    accept_topk: 1
+    domain: "leave"
+    intent_type: "create"
+    notes: "Nghỉ không lương, có dấu."
+  - text: "don xin nghi phep da duoc duyet chua"
+    expected_action: "leave.status"
+    accept_topk: 3
+    domain: "leave"
+    intent_type: "status"
+    notes: "Không dấu, status."
+  - text: "đơn nghỉ phép pending chưa"
+    expected_action: "leave.status"
+    accept_topk: 3
+    domain: "leave"
+    intent_type: "status"
+    notes: "Pending status, có dấu."
+  - text: "tao muon huy don nghi hom qua"
+    expected_action: "leave.cancel"
+    accept_topk: 3
+    domain: "leave"
+    intent_type: "cancel"
+    notes: "Không dấu, cancel."
+  - text: "huỷ đơn nghỉ phép tuần trước"
+    expected_action: "leave.cancel"
+    accept_topk: 3
+    domain: "leave"
+    intent_type: "cancel"
+    notes: "Có dấu, cancel."
+  - text: "phép năm còn bao nhiêu"
+    expected_action: "leave.balance"
+    accept_topk: 3
+    domain: "leave"
+    intent_type: "balance"
+    notes: "Balance."
+  - text: "còn lại mấy ngày phép năm nay"
+    expected_action: "leave.balance"
+    accept_topk: 3
+    domain: "leave"
+    intent_type: "balance"
+    notes: "Synonym balance."

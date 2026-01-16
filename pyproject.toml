@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "hybrid-intent-router"
+version = "0.2.0"
+description = "Hybrid Intent Router with Rule-based and Embedding-based routing"
+authors = ["Admin <admin@example.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "0.109.0"
+uvicorn = {extras = ["standard"], version = "0.27.0"}
+pydantic = "2.6.0"
+pydantic-settings = "^2.1.0"
+python-multipart = "0.0.7"
+sentence-transformers = "2.3.1"
+torch = "2.2.0"
+numpy = "1.26.3"
+scikit-learn = "1.4.0"
+embed-anything = "^0.7.0"
+PyYAML = "6.0.1"
+aiofiles = "23.2.1"
+requests = "2.31.0"
+watchfiles = "0.21.0"
+gunicorn = "21.2.0"
+python-dotenv = "1.0.1"
+redis = "^5.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.0.0"
+pytest-asyncio = "0.23.5"
+httpx = "0.26.0"
+black = "^24.1.1"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

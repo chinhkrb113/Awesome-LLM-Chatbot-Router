@@ -1,0 +1,17 @@
+learning_loop:
+  enabled: true
+  interactions_path: logs/router_interactions.jsonl
+  feedback_path: logs/router_feedback.jsonl
+  report_path: docs/learning/weekly_report.md
+  state_path: logs/learning_state.json
+  action_catalog_path: config/action_catalog.yaml
+  min_selections: 20
+  min_outcomes: 10
+  min_new_selections: 10
+  min_hours_between_runs: 24
+  run_window_start: 22
+  run_window_end: 6
+  check_interval_minutes: 60
+  rule_threshold: 0.4
+  embed_threshold: 0.6
+  auto_tune: true

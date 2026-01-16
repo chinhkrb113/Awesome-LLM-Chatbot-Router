@@ -1,0 +1,27 @@
+system:
+  env: "production"
+  timezone: "Asia/Ho_Chi_Minh"
+  
+memory:
+  context_ttl_seconds: 1800       # 30 minutes
+  cleanup_interval_seconds: 300   # Run cleanup every 5 minutes
+  max_active_contexts: 10000      # Safety limit
+
+weights:
+  default_rule: 0.6
+  default_embed: 0.4
+  domain_boost: 0.1
+  
+thresholds:
+  pairwise_gap: 0.1
+  entity_max_boost: 0.15
+  min_confidence: 0.4
+
+logging:
+  level: "INFO"
+  format: "json"
+  file_path: "logs/system.log"
+
+timeouts:
+  embedding_inference_ms: 500
+  external_api_ms: 2000

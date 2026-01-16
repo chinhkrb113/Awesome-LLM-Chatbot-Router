@@ -1,0 +1,15 @@
+pairwise_disambiguation:
+  - pair: ["leave.create", "leave.status"]
+    signals:
+      prefer_create: ["xin nghỉ", "tạo đơn", "nghỉ phép", "đăng ký"]
+      prefer_status: ["trạng thái", "đã duyệt", "kiểm tra", "xem"]
+  
+  - pair: ["visitor.create", "visitor.status"]
+    signals:
+      prefer_create: ["mời khách", "đăng ký khách", "tạo lịch"]
+      prefer_status: ["khách đến chưa", "check in", "trạng thái"]
+
+default_bias:
+  leave.cancel: -0.05
+  visitor.cancel: -0.05
+  common.delete: -0.08

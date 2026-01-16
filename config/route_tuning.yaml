@@ -1,0 +1,15 @@
+model:
+  name: keepitreal/vietnamese-sbert
+  pooling: mean  # current embedding_engine averages description + seeds
+fuser:
+  w_rule: 0.6
+  w_embed: 0.4
+  pattern_bonus: 0.1
+ui_thresholds:
+  preselect_score: 0.85
+  preselect_gap: 0.15
+  top3_score: 0.70
+fallback: clarify
+meta:
+  source: "baseline 2026-01-14"
+  notes: "Match current code defaults; update via benchmark runner when tuning."

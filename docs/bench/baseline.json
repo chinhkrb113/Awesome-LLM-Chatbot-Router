@@ -1,0 +1,172 @@
+{
+  "summary": {
+    "total": 11,
+    "top1_accuracy": 0.8182,
+    "top3_recall": 1.0,
+    "mrr": 0.9091,
+    "per_domain": {
+      "visitor": {
+        "n": 3,
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "mrr": 1.0
+      },
+      "leave": {
+        "n": 8,
+        "top1_accuracy": 0.75,
+        "top3_recall": 1.0,
+        "mrr": 0.875
+      }
+    }
+  },
+  "meta": {
+    "description": "Devset nhỏ mẫu để kiểm tra route top-k cho các intent leave/visitor.",
+    "version": "0.1",
+    "created_at": "2026-01-14"
+  },
+  "details": [
+    {
+      "text": "Mai cho anh A vào cổng",
+      "expected": "visitor.create",
+      "ranked": [
+        "visitor.create",
+        "visitor.cancel",
+        "visitor.status",
+        "leave.status",
+        "leave.cancel"
+      ],
+      "rank": 1,
+      "ui_strategy": "CLARIFY"
+    },
+    {
+      "text": "check in khach moi chua",
+      "expected": "visitor.status",
+      "ranked": [
+        "visitor.status",
+        "visitor.create",
+        "visitor.cancel",
+        "leave.cancel",
+        "leave.status"
+      ],
+      "rank": 1,
+      "ui_strategy": "CLARIFY"
+    },
+    {
+      "text": "thu hoi QR khach chieu nay",
+      "expected": "visitor.cancel",
+      "ranked": [
+        "visitor.cancel",
+        "visitor.status",
+        "visitor.create",
+        "leave.balance",
+        "leave.status"
+      ],
+      "rank": 1,
+      "ui_strategy": "CLARIFY"
+    },
+    {
+      "text": "xin nghỉ phép 2 ngày tuần sau",
+      "expected": "leave.create",
+      "ranked": [
+        "leave.create",
+        "leave.status",
+        "leave.cancel",
+        "leave.balance",
+        "visitor.status"
+      ],
+      "rank": 1,
+      "ui_strategy": "PRESELECT"
+    },
+    {
+      "text": "cho tôi nghỉ không lương ngày mai",
+      "expected": "leave.create",
+      "ranked": [
+        "leave.create",
+        "leave.status",
+        "leave.cancel",
+        "leave.balance",
+        "visitor.cancel"
+      ],
+      "rank": 1,
+      "ui_strategy": "TOP_3"
+    },
+    {
+      "text": "don xin nghi phep da duoc duyet chua",
+      "expected": "leave.status",
+      "ranked": [
+        "leave.create",
+        "leave.status",
+        "leave.cancel",
+        "leave.balance",
+        "visitor.status"
+      ],
+      "rank": 2,
+      "ui_strategy": "TOP_3"
+    },
+    {
+      "text": "đơn nghỉ phép pending chưa",
+      "expected": "leave.status",
+      "ranked": [
+        "leave.status",
+        "leave.create",
+        "leave.balance",
+        "leave.cancel",
+        "visitor.cancel"
+      ],
+      "rank": 1,
+      "ui_strategy": "CLARIFY"
+    },
+    {
+      "text": "tao muon huy don nghi hom qua",
+      "expected": "leave.cancel",
+      "ranked": [
+        "leave.status",
+        "leave.cancel",
+        "visitor.status",
+        "leave.create",
+        "visitor.cancel"
+      ],
+      "rank": 2,
+      "ui_strategy": "CLARIFY"
+    },
+    {
+      "text": "huỷ đơn nghỉ phép tuần trước",
+      "expected": "leave.cancel",
+      "ranked": [
+        "leave.cancel",
+        "leave.create",
+        "leave.status",
+        "leave.balance",
+        "visitor.cancel"
+      ],
+      "rank": 1,
+      "ui_strategy": "TOP_3"
+    },
+    {
+      "text": "phép năm còn bao nhiêu",
+      "expected": "leave.balance",
+      "ranked": [
+        "leave.balance",
+        "leave.status",
+        "leave.cancel",
+        "visitor.status",
+        "leave.create"
+      ],
+      "rank": 1,
+      "ui_strategy": "PRESELECT"
+    },
+    {
+      "text": "còn lại mấy ngày phép năm nay",
+      "expected": "leave.balance",
+      "ranked": [
+        "leave.balance",
+        "leave.create",
+        "leave.status",
+        "leave.cancel",
+        "visitor.status"
+      ],
+      "rank": 1,
+      "ui_strategy": "TOP_3"
+    }
+  ]
+}

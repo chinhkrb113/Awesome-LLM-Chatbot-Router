@@ -1,0 +1,223 @@
+action_catalog:
+  - action_id: leave.create
+    friendly_name: "Tạo đơn xin nghỉ phép"
+    domain: leave
+    business_description: >
+      Tạo đơn xin nghỉ phép cho nhân viên theo các loại nghỉ được quy định
+      (phép năm, nghỉ ốm, không lương…).
+    seed_phrases:
+      - "xin nghỉ phép"
+      - "tạo đơn nghỉ"
+      - "đăng ký nghỉ"
+      - "xin nghỉ mai"
+      - "nghỉ phép một ngày"
+      - "xin nghỉ ốm"
+      - "nghỉ không lương"
+      - "tạo đơn xin phép"
+      - "cho tôi nghỉ ngày mai"
+      - "tôi muốn nghỉ làm"
+      - "đăng ký nghỉ phép"
+      - "xin nghỉ vài ngày"
+    required_slots:
+      - start_date
+      - end_date
+      - leave_type
+    optional_slots:
+      - reason
+      - half_day
+    slot_config:
+      start_date:
+        friendly_name: "Ngày bắt đầu nghỉ"
+        prompt: "Bạn muốn xin nghỉ từ ngày nào ạ?"
+      end_date:
+        friendly_name: "Ngày kết thúc nghỉ"
+        prompt: "Bạn định nghỉ đến hết ngày nào?"
+      leave_type:
+        friendly_name: "Loại nghỉ phép"
+        prompt: "Bạn muốn xin nghỉ theo diện nào trong các lựa chọn sau (Phép năm, Nghỉ ốm...)?"
+    # NEW: Define constraints/options for slots
+    slot_options:
+      leave_type:
+        - "Nghỉ phép năm"
+        - "Nghỉ ốm"
+        - "Nghỉ việc riêng"
+        - "Nghỉ không lương"
+        - "Nghỉ bù"
+        - "Nghỉ thai sản"
+    typical_entities:
+      - date
+      - duration
+      - leave_type
+    examples:
+      - "Mai tôi xin nghỉ phép"
+      - "Cho tôi nghỉ 2 ngày tuần sau"
+      - "Xin nghỉ ốm hôm nay"
+
+  - action_id: leave.status
+    friendly_name: "Tra cứu trạng thái nghỉ phép"
+    domain: leave
+    business_description: >
+      Tra cứu trạng thái đơn xin nghỉ phép đã tạo (đã duyệt, chờ duyệt, bị từ chối).
+    seed_phrases:
+      - "trạng thái đơn nghỉ"
+      - "đơn nghỉ của tôi sao rồi"
+      - "xin nghỉ đã duyệt chưa"
+      - "xem đơn nghỉ"
+      - "kiểm tra đơn nghỉ"
+      - "đơn nghỉ đang pending à"
+      - "nghỉ phép được duyệt chưa"
+      - "xem trạng thái nghỉ phép"
+      - "đơn xin phép của tôi"
+      - "đơn nghỉ hiện tại"
+    required_slots:
+      - leave_request_id
+    optional_slots:
+      - date_range
+    typical_entities:
+      - status
+      - date
+    examples:
+      - "Đơn xin nghỉ của tôi đã duyệt chưa?"
+      - "Xem trạng thái nghỉ phép"
+
+  - action_id: leave.balance
+    friendly_name: "Tra cứu số dư ngày nghỉ"
+    domain: leave
+    business_description: >
+      Tra cứu số ngày nghỉ phép còn lại của nhân viên.
+    seed_phrases:
+      - "xem phép còn bao nhiêu"
+      - "tôi còn bao nhiêu ngày phép"
+      - "số ngày nghỉ còn lại"
+      - "phép năm còn không"
+      - "kiểm tra phép"
+      - "nghỉ phép còn lại"
+      - "xem số phép"
+      - "tình trạng phép năm"
+      - "phép của tôi còn mấy ngày"
+      - "balance nghỉ phép"
+    required_slots: []
+    optional_slots:
+      - year
+    typical_entities:
+      - number
+      - year
+    examples:
+      - "Tôi còn bao nhiêu ngày phép?"
+      - "Xem phép năm còn lại"
+
+  - action_id: visitor.create
+    friendly_name: "Đăng ký khách mời"
+    domain: visitor
+    business_description: >
+      Tạo khách mời ra vào, cấp QR hoặc thẻ ra vào theo thời gian và địa điểm xác định.
+    seed_phrases:
+      - "tạo khách mời"
+      - "cho người vào cổng"
+      - "tạo pass ra vào"
+      - "đăng ký khách đến"
+      - "cấp QR cho khách"
+      - "mời khách vào công ty"
+      - "đăng ký visitor"
+      - "cho anh A vào cổng"
+      - "tạo thẻ vào cho khách"
+      - "đăng ký tiếp khách"
+      - "cấp quyền ra vào"
+      - "tạo giấy ra vào"
+    required_slots:
+      - visitor_name
+      - visit_date
+    optional_slots:
+      - visit_time
+      - location
+      - host_name
+    typical_entities:
+      - person_name
+      - date
+      - time
+      - location
+    examples:
+      - "Mai cho anh A vào cổng"
+      - "Tạo khách mời cho chiều nay"
+      - "Cấp QR cho khách ngày mai"
+
+  - action_id: visitor.status
+    friendly_name: "Tra cứu trạng thái khách mời"
+    domain: visitor
+    business_description: >
+      Tra cứu trạng thái đăng ký khách ra vào (đã tạo, đã check-in, đã hết hạn).
+    seed_phrases:
+      - "xem trạng thái khách"
+      - "khách đã vào chưa"
+      - "visitor đã check-in chưa"
+      - "kiểm tra khách mời"
+      - "trạng thái đăng ký khách"
+      - "xem visitor"
+      - "khách mời hôm nay sao rồi"
+      - "QR khách còn hiệu lực không"
+      - "tình trạng khách ra vào"
+      - "xem thông tin khách"
+    required_slots:
+      - visitor_id
+    optional_slots:
+      - visit_date
+    typical_entities:
+      - status
+      - date
+    examples:
+      - "Khách mời hôm nay đã vào chưa?"
+      - "Xem trạng thái visitor"
+
+  - action_id: visitor.cancel
+    friendly_name: "Hủy đăng ký khách mời"
+    domain: visitor
+    business_description: >
+      Huỷ hoặc thu hồi quyền ra vào / QR của khách mời đã đăng ký.
+    seed_phrases:
+      - "huỷ khách mời"
+      - "thu hồi QR khách"
+      - "hủy visitor"
+      - "dừng quyền ra vào"
+      - "cancel khách"
+      - "xóa đăng ký khách"
+      - "huỷ cho khách vào"
+      - "hủy pass ra vào"
+      - "không cho khách vào nữa"
+      - "thu hồi thẻ vào"
+    required_slots:
+      - visitor_id
+    optional_slots:
+      - reason
+    typical_entities:
+      - status
+      - person_name
+    examples:
+      - "Huỷ khách mời chiều nay"
+      - "Thu hồi QR của anh A"
+
+  - action_id: leave.cancel
+    friendly_name: "Hủy đơn xin nghỉ phép"
+    domain: leave
+    business_description: >
+      Huỷ hoặc thu hồi đơn xin nghỉ phép đã tạo trước đó.
+    seed_phrases:
+      - "huỷ đơn nghỉ"
+      - "hủy xin nghỉ"
+      - "cancel leave"
+      - "thu hồi đơn nghỉ"
+      - "không nghỉ nữa"
+      - "xóa đơn xin phép"
+      - "dừng nghỉ phép"
+      - "huỷ nghỉ"
+      - "bỏ đơn nghỉ"
+      - "hủy yêu cầu nghỉ"
+    required_slots:
+      - leave_request_id
+    optional_slots:
+      - reason
+    typical_entities:
+      - status
+      - date
+    examples:
+      - "Huỷ đơn xin nghỉ hôm qua"
+      - "Tôi không nghỉ nữa, huỷ giúp tôi"
